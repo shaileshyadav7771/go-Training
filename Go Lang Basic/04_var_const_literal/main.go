@@ -31,7 +31,7 @@ func main() {
 	fmt.Println(a, b, c, d, e, f)
 
 	const (
-		a2 = iota + 2
+		a2 = iota + 7
 		b2
 		c2
 		d2 = a2 * 10
@@ -49,11 +49,3 @@ func main() {
 	)
 	fmt.Println(a3, b3, c3, d3, e3)
 }
-
-//O/p is
-
-// PS C:\Users\shailesh_yadav\go Training\04_var_const_literal> go run .\main.go
-// 25 3.14159 10
-// 2 2 2 20 20 20
-// 2 3 4 20 20 5
-// 1 2 4 8 16
