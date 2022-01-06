@@ -14,8 +14,15 @@ func main() {
 		fmt.Println("Server is up & running.")
 	}
 
-	if s := "FX"; serverStatusOK {
+	if s := "Production77"; serverStatusOK {
 		fmt.Printf("%s server is up & running.", s)
+		//another way of declaration is :
+		// s := "Production77"
+		//     if ; serverStatusOK {
+		// 	     fmt.Printf("%s server is up & running.", s)
+
+	} else {
+		fmt.Printf("Sorry %s Server is not running. May be some problem", s)
 	}
 
 	// fmt.Println(s)	//compiler error: undefined

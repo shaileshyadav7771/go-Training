@@ -8,12 +8,12 @@ import (
 )
 
 func main() {
-	isSunny := true
+	isSunny := true //false
 
 	if isSunny {
 		fmt.Println("Enjoy your day!")
 	} else {
-		fmt.Println("Tomorrow is another day!")
+		fmt.Println("please wait for sunny:)!")
 	}
 
 	isSaturday := true
@@ -21,4 +21,3 @@ func main() {
 		fmt.Println("Let's swim outdoor.")
 	}
 }
-

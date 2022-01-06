@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	seasonNo := 1
+	seasonNo := 10
 
 	if seasonNo == 1 {
 		fmt.Println("spring - ", seasonNo)

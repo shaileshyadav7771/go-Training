@@ -3,14 +3,18 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
 	fmt.Println("Press CTRL+C to stop the program.")
 
 	i := 2
 	for {
-		fmt.Print(i, " ")
+		time.Sleep(2 * time.Second) //here 2 is the duration which means 2 sec :).
+		fmt.Println(i, " ")
 		i++
 	}
 }
