@@ -11,23 +11,23 @@ var g int = 10
 
 func main() {
 
-	fmt.Println(g)
+	fmt.Println(g) //10
 
 	{
 		g := 20
-		fmt.Println(g)
+		fmt.Println(g) //20
 		f := 2.3
-		fmt.Println(f)
+		fmt.Println(f) //2.3
 	}
 
 	// fmt.Println(f) //compiler error - undefined 'f'
 
-	fmt.Println(g)
+	fmt.Println(g) //10
 	g += 1
 
 	{
 		g += 4
-		fmt.Println(g)
+		fmt.Println(g) //15
 	}
 
 	sayHello()
@@ -36,7 +36,7 @@ func main() {
 
 func sayHello() {
 	fmt.Println("Hello!")
-	fmt.Println(g)
+	fmt.Println(g) //15
 
 	s := "from testScope()"
 	fmt.Println(s)

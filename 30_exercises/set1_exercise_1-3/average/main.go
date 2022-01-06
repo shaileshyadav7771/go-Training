@@ -15,6 +15,6 @@ func main() {
 	num2 := 14
 	num3 := 10
 
-	fmt.Printf("average of %d, %d, and %d is %d.\n",
+	fmt.Printf("The Average of 3 no is: %d, %d, and %d is %d.\n",
 		num1, num2, num3, (num1+num2+num3)/3)
 }

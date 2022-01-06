@@ -8,7 +8,7 @@ import (
 )
 
 // Exercise: What is the result of the following expressions?
-// fmt.Println(4.5*4/2 - 3.5)
+// fmt.Println(4.5*4/2 - 3.5)  //9-3.5=5.5
 // fmt.Printf("%f\n", 4.5*4/2-3.5)
 
 func main() {
