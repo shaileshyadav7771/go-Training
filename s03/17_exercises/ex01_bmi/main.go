@@ -33,37 +33,70 @@ weight	height	bmi			status
 
 func main() {
 
-	const kilogramsPerPound = 0.45359237
-	const metersPerInch = 0.0254
-
 	var weight float64
-	fmt.Print("Enter weight in pounds:")
+	fmt.Print("Please enter your weight in kg: ")
 	fmt.Scanf("%f ", &weight)
 
 	var height float64
-	fmt.Print("Enter height in inch:")
+	fmt.Print("Please enter your height in meter: ")
 	fmt.Scanf("%f ", &height)
 
-	// Covert Pounds to Kilograms & Inches to Meters
-	weightInKilograms := weight * kilogramsPerPound
-	heightInMeters := height * metersPerInch
+	//Now Calculating BMI as we are taking direct input in kg.
 
-	// Calculate BMI
-	bmi := weightInKilograms / (heightInMeters * heightInMeters)
+	bmi := weight / (height * height)
 
 	weightStatus := ""
+
 	if bmi < 18.5 {
 		weightStatus = "Underweight"
 	} else if bmi < 25 {
-		weightStatus = "Normal"
+		weightStatus = "Healthy"
+
 	} else if bmi < 30 {
 		weightStatus = "Overweight"
 	} else {
 		weightStatus = "Obese"
 	}
-
-	fmt.Println()
+	fmt.Println(" ")
+	fmt.Println("***********    ***********")
 	fmt.Printf("%-10s %-10s %-12s %-10s \n", "Weight", "Height", "BMI", "Status")
-	fmt.Printf("%-10.2f %-10.2f %-12.6f %-10s \n", weight, height, bmi, weightStatus)
+	fmt.Printf("%-10f %-10f %-12f %-10s \n", weight, height, bmi, weightStatus)
 
 }
+
+// func main() {
+
+// 	const kilogramsPerPound = 0.45359237
+// 	const metersPerInch = 0.0254
+
+// 	var weight float64
+// 	fmt.Print("Enter weight in pounds:")
+// 	fmt.Scanf("%f ", &weight)
+
+// 	var height float64
+// 	fmt.Print("Enter height in inch:")
+// 	fmt.Scanf("%f ", &height)
+
+// 	// Covert Pounds to Kilograms & Inches to Meters
+// 	weightInKilograms := weight * kilogramsPerPound
+// 	heightInMeters := height * metersPerInch
+
+// 	// Calculate BMI
+// 	bmi := weightInKilograms / (heightInMeters * heightInMeters)
+
+// 	weightStatus := ""
+// 	if bmi < 18.5 {
+// 		weightStatus = "Underweight"
+// 	} else if bmi < 25 {
+// 		weightStatus = "Normal"
+// 	} else if bmi < 30 {
+// 		weightStatus = "Overweight"
+// 	} else {
+// 		weightStatus = "Obese"
+// 	}
+
+// 	fmt.Println()
+// 	fmt.Printf("%-10s %-10s %-12s %-10s \n", "Weight", "Height", "BMI", "Status")
+// 	fmt.Printf("%-10.2f %-10.2f %-12.6f %-10s \n", weight, height, bmi, weightStatus)
+
+// }
