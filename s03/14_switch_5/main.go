@@ -23,10 +23,11 @@ func main() {
 		switch season {
 		case "spring", "SPRING":
 			fmt.Fprintf(os.Stdout, "You Entered %s\n", season)
+			//https://golangbyexample.com/fprintf-golang/
 		case "summer":
 			fmt.Println("You Entered", season)
 			break
-			fmt.Println("This line won't be reached", season) // Note
+			// fmt.Println("This line won't be reached", season) // Note
 		case "fall":
 			fmt.Println("You Entered", season)
 		case "winter":

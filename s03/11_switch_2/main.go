@@ -1,9 +1,12 @@
 // File name: ...\s03\11_switch_2\main.go
 // Course Name: Go (Golang) Programming by Example (by Kam Hojati)
 
+//fallthrough -when mentioned it'll not check the expression for next swich case and enter into block.
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	var seasonNo int
@@ -21,7 +24,9 @@ func main() {
 		fallthrough
 	case 4:
 		fmt.Println("winter - ", seasonNo)
+		fallthrough
 	default:
 		fmt.Println("a new season - ", seasonNo)
+		// fallthrough                             // fallthrough we can't define in default statment :)
 	}
 }
