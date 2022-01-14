@@ -14,6 +14,8 @@ func main() {
 	var sum int
 
 	nums[1] = 20
+	fmt.Println(nums[1])
+	fmt.Println("Printing nums Array: ", nums)
 
 	for i := range nums {
 		sum += nums[i]
@@ -30,7 +32,7 @@ func main() {
 		fmt.Print(nums[j], " ")
 	}
 
-	var j int
+	var j int //This we defined just to understand the variable scope above j is valid in that for loop.
 	fmt.Println()
 	for j = 0; j < len(nums); j++ {
 		fmt.Print(nums[j], " ")

@@ -17,6 +17,8 @@ func main() {
 		"PST": -8 * 60 * 60,
 	}
 
+	fmt.Println("timezone Dict is:", timeZone)
+
 	if offset, ok := timeZone["EST"]; ok {
 		fmt.Println(offset)
 	}

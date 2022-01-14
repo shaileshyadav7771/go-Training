@@ -13,10 +13,11 @@ import (
 // map is a good data structure to address this assignment.
 func main() {
 	s := "How 你 cómo お元 Wie geht 잘 How 你 có お元 Wie geht 잘 Ho có Wie"
+	// fmt.Println("Rune value of s is :", rune(s))
 
 	r := []rune(s)
 
-	// fmt.Println(r)
+	fmt.Println("r ki value is :", r)
 	fmt.Println(len(s), utf8.RuneCountInString(s))
 
 	counts := make(map[rune]int)

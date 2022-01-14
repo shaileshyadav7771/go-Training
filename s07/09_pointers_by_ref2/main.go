@@ -12,7 +12,7 @@ func main() {
 	f3(&a)
 	fmt.Printf("(2) a=%d \n\n", a)
 
-	fmt.Printf("(3) a=%d\n", f3(&a))
+	fmt.Printf("(3) a=%d\n", f3(&a)) //calling f3 by passing&a add of a (reference Type)
 
 }
 

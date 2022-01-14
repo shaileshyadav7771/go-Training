@@ -13,6 +13,8 @@ func main() {
 	// }
 	// fmt.Println(capitalCity["Canada"])
 
+	//Note in below line like map above declared
+	//keys are map[string] and remaining are values.
 	employees := map[string]map[string]string{
 
 		"BT": map[string]string{
@@ -20,7 +22,7 @@ func main() {
 			"lastName":  "Travis",
 		},
 		"PC": map[string]string{
-			"firstName": "Parker",
+			"firstName": "Shailesh",
 			"lastName":  "Cooper",
 		},
 		"DC": map[string]string{

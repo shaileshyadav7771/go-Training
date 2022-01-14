@@ -16,6 +16,7 @@ func main() {
 
 	for i := range s {
 		word := s[i]
+		fmt.Println(word)
 		if !m[word] {
 			m[word] = true
 		}

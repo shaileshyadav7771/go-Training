@@ -14,7 +14,7 @@ Press CTRL + C to exit the program.
 */
 
 func main() {
-	var delayTime = 20 * time.Millisecond
+	var delayTime = 400 * time.Millisecond
 
 	fmt.Println("Press CTRL + C to exit the program.")
 	fmt.Print("Operation in progress ... ")
@@ -23,17 +23,33 @@ func main() {
 		fmt.Print(`\`)
 		time.Sleep(delayTime)
 		fmt.Print("\b")
+		fmt.Print(`\`)
+		fmt.Print("\b")
+		fmt.Print(`\`)
+		fmt.Print("\b")
 
 		fmt.Print(`|`)
 		time.Sleep(delayTime)
+		fmt.Print("\b")
+		fmt.Print(`|`)
+		fmt.Print("\b")
+		fmt.Print(`|`)
 		fmt.Print("\b")
 
 		fmt.Print(`/`)
 		time.Sleep(delayTime)
 		fmt.Print("\b")
+		fmt.Print(`/`)
+		fmt.Print("\b")
+		fmt.Print(`/`)
+		fmt.Print("\b")
 
 		fmt.Print(`-`)
 		time.Sleep(delayTime)
+		fmt.Print("\b")
+		fmt.Print(`-`)
+		fmt.Print("\b")
+		fmt.Print(`-`)
 		fmt.Print("\b")
 	}
 }

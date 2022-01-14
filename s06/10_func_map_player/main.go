@@ -16,6 +16,7 @@ import "fmt"
 var players = make(map[string]map[string]bool)
 
 func main() {
+
 	addPlayer("Leo", "Messi")
 	addPlayer("Roger", "Federer")
 	addPlayer("Michael", "Jordan")

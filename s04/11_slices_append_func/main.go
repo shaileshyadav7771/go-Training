@@ -16,12 +16,14 @@ func main() {
 	for i, name := range team {
 		fmt.Println(i, name)
 	}
+
+	fmt.Printf("Complete Slice is :%v,%T", team, team)
 }
 
 func midfielders() []string {
-	return []string{"Iniesta", "Zidane", "Platini"}
+	return []string{"Dhoni", "Yadav", "Kohli"}
 }
 
 func goalkeeper() string {
-	return "Bufon"
+	return "Shailesh"
 }

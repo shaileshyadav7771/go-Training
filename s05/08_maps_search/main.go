@@ -22,6 +22,9 @@ func main() {
 
 	if ext, ok := fileExt["Java"]; ok {
 		fmt.Println(ext, ok)
+	} else {
+		fmt.Println("Not found Sorry :) ")
+
 	}
 
 	if ext, ok := fileExt["Ruby"]; ok {

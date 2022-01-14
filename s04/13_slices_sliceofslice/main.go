@@ -13,6 +13,7 @@ func main() {
 	var bigSlice []int
 
 	for r := range slices {
+		print(r)
 		bigSlice = append(bigSlice, slices[r]...)
 	}
 

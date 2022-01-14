@@ -5,9 +5,9 @@ package main
 
 import "fmt"
 
-// **NOTE** ASSIGNMENT: Use 'slice' and variadic functions to implement a 
-// simple stack with three operations: 
-// push: adding elements to the top of stack (push is normally adding one 
+// **NOTE** ASSIGNMENT: Use 'slice' and variadic functions to implement a
+// simple stack with three operations:
+// push: adding elements to the top of stack (push is normally adding one
 // element, but in this example we want to use a variadic function);
 // pop: removing one element from the top of stack;
 // top: retrieving the head element of the stack.
@@ -15,7 +15,8 @@ import "fmt"
 func main() {
 	s := []int{}
 
-	s = push(s, 1, 2, 3)
+	s = push(s, 1, 2, 3) // we are passing two values one is slice (s) and other is values 1,2,3
+
 	fmt.Println(s)
 
 	s = pop(s)
@@ -33,8 +34,12 @@ func push(s []int, newS ...int) []int {
 
 func pop(s []int) []int {
 	return s[:len(s)-1]
+
 }
 
+//here we are not returing an slice but only int value.
+
 func top(s []int) int {
+
 	return s[len(s)-1]
 }

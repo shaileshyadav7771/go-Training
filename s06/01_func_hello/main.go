@@ -15,17 +15,19 @@ func main() {
 	fmt.Printf("Type of sayHi: %T\n", sayHi)
 	fmt.Printf("Type of sayGreetings: %T\n", sayGreetings)
 }
+
 func sayHi() {
 	fmt.Println("Hi there!")
 }
 
 func sayGreetings(lang string) {
+
 	if lang == "ESP" {
 		fmt.Println("Hola")
 	} else if lang == "GER" {
 		fmt.Println("Hallo")
 	} else {
-		fmt.Println("Hello")
+		fmt.Println("Hello-default")
 	}
 
 }

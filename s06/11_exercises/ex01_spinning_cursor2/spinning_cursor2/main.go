@@ -21,6 +21,9 @@ var delayTime = 100 * time.Millisecond
 func main() {
 	executionTime := 3 * time.Second
 	start := time.Now()
+	time.Sleep(8 * time.Second)
+
+	fmt.Println("Time Start (Now) :", time.Since(start))
 
 	fmt.Printf("Program will end in about %v.\n",
 		executionTime)

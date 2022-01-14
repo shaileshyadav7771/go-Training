@@ -13,8 +13,10 @@ func main() {
 	fmt.Printf("x=%d\n", x)
 }
 
+//Note:: Here we are sending a copy of s to f1 and not the reference of it :).
+//In other programming lang It's called call by value
 func f1(y int) {
 	fmt.Printf("(f1) y=%d\n", y)
-	y += 2
+	y += 5
 	fmt.Printf("(f1) y=%d\n", y)
 }

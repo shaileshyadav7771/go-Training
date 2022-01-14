@@ -21,6 +21,8 @@ func main() {
 	fmt.Print(multCounter(3), " ")
 	fmt.Print(multCounter(4), " ")
 	fmt.Print(multCounter(-2))
+
+	fmt.Printf("Type of addCounter : %T", addCounter)
 }
 
 func addBy() func(int) int {
@@ -29,11 +31,13 @@ func addBy() func(int) int {
 		total += i
 		return total
 	}
+
 }
 
 func multBy() func(int) int {
 	total := 1
 	return func(i int) (ret int) {
+		//imp: we are returing here with > ret
 		total *= i
 		ret = total
 		return

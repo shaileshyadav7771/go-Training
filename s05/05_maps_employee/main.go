@@ -13,9 +13,13 @@ func main() {
 		"Dakota": 93000.00,
 	}
 
+	fmt.Printf("Blake's Salary = %.2f\n", employeeSalary["Blake"])
 	fmt.Printf("Parker's Salary = %.2f\n", employeeSalary["Parker"])
+	fmt.Printf("Dakota's Salary = %.2f\n", employeeSalary["Dakota"])
 
 	salary1, ok := employeeSalary["Dakota"]
+	fmt.Println(salary1, ok) // 93000 true
+
 	if ok {
 		fmt.Printf("Value %.2f was found.\n", salary1)
 	} else {
@@ -36,7 +40,8 @@ func main() {
 		fmt.Printf("Key doesn't exist.\n")
 	}
 
-	for name, salary := range employeeSalary { // key:name, value:salary
-		fmt.Println(name, salary)
+	fmt.Println("***********************")
+	for name1, salary1 := range employeeSalary { // key:name, value:salary
+		fmt.Println(name1, salary1)
 	}
 }

@@ -5,7 +5,7 @@ package main
 
 import "fmt"
 
-// ASSIGNMENT - Write a callback with two parameters:
+// ASSIGNMENT - Write a callback with two parameters://means passing a fn in another fn
 // 1. A function that accepts a variable number of integers and return an integer.
 // In practice this could be a function to add or multiply, ... some numbers.
 // 2. The list of integers (with a variable number of elements) to be added, or multiplied, ...
@@ -24,10 +24,13 @@ func main() {
 	fmt.Println(add(1, 2, 3, 4))
 
 	nums := []int{1, 2, 3, 4}
+	fmt.Println(nums)
+
 	fmt.Println(add(nums...))
 
-	fmt.Printf("%v\n", calc2(add, nums))
+	fmt.Printf("%v\n", calc2(add, nums)) //fn callback
 
+	//we know if we use ... in fn then It's variadic fn
 	mult := func(nums ...int) int {
 		total := 1
 		for _, num := range nums {
@@ -41,4 +44,5 @@ func main() {
 
 func calc2(f func(...int) int, x []int) int {
 	return f(x...)
+
 }

@@ -18,8 +18,8 @@ func main() {
 	// nums[2] = 3 //panic: runtime error: index out of range
 	fmt.Printf("%v\n\n", nums)
 
-	s1 := []int{1, 3, 5} //1st slice
-	s2 := make([]int, 2) //2nd slice
+	s1 := []int{1, 3, 5} //1st slice using first method
+	s2 := make([]int, 2) //2nd slice using make() method
 
 	copy(s2, s1)
 	s3 := append(s2, 4, 6) //3rd slice

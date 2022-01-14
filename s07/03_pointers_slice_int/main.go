@@ -9,8 +9,8 @@ func main() {
 
 	x := []int{2, 4, 6, 8, 10}
 	p := &x
-	fmt.Printf("x=%v *p=%d &x???=%x p???=%x &p=%x\n",
-		x, *p, &x, p, &p) //&x and p are meaningless
+
+	fmt.Printf("x=%v *p=%d &x???=%x p???=%x &p=%x\n", x, *p, &x, p, &p) //&x and p are meaningless
 
 	p0 := &x[0]
 	fmt.Printf("x[0]=%v *p0=%d &x[0]=%x p0=%x &p0=%x\n",
@@ -21,11 +21,11 @@ func main() {
 		x[2], *p2, &x[2], p2, &p2)
 
 	fmt.Println()
-	y := x[2:]
+	y := x[2:] //[6 8 10]
 	q := &y
 	fmt.Printf("*q=%d &q=%x\n", *q, &q)
 
-	q0 := &y[0]
+	q0 := &y[0] //again we are taking sub slice //  [6]
 	fmt.Printf("y[0]=%v *q0=%d &y[0]=%x q0=%x &q0=%x\n",
 		y[0], *q0, &y[0], q0, &q0)
 
@@ -42,3 +42,6 @@ func main() {
 	}
 
 }
+
+//Note:Address of  &y[0]=c000198010 is same to &x[2] It is because y is sub slice and both are pointing to same add
+//for value 6

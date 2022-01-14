@@ -17,6 +17,15 @@ func main() {
 		SM
 	)
 
+	//same thing we can define in another way like below so basically It is same thing's
+	//Above we are using just to see how we can use type with an Array :)
+	// const (
+	// 	EX = iota
+	// 	LG
+	// 	MD
+	// 	SM
+	// )
+
 	sz := [...]string{EX: "Extra Large", LG: "Large", MD: "Medium", SM: "Small"}
 	fmt.Println(MD, sz[MD])
 	fmt.Println(sz)

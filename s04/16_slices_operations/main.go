@@ -34,17 +34,20 @@ func main() {
 	d := append([]int(nil), a...) // Copy
 	fmt.Printf(" (3) a%v d%v \n", a, d)
 
+	fmt.Println("Value of c for cut is:", c)
 	c = append(c[:2], c[4:]...) // Cut
 	fmt.Printf(" (4) c%v \n", c)
 
+	fmt.Println("Value of c for Delete is:", c)
 	c = append(c[:1], c[2:]...) // Delete (with preserving order)
 	fmt.Printf(" (5) c%v \n", c)
 
+	fmt.Printf(" (7) d%v \n", d)
 	c = c[:1+copy(c[1:], c[2:])] // Delete (with preserving order)
 	fmt.Printf(" (6) c%v \n", c)
 
 	// Delete (without preserving order)
-	fmt.Printf(" (7) d%v \n", d)
+
 	d[2] = d[len(d)-1]
 	d = d[:len(d)-1]
 	fmt.Printf(" (8) d%v \n", d)

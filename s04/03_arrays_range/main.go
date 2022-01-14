@@ -19,7 +19,7 @@ func main() {
 	fmt.Println(x)
 
 	// var total float32 = 0
-	var total float32
+	var total float32 //we can declare like this also as total value bydefault 'll be 0.
 
 	//for i, val := range x {	//compiler error - i declared but not used
 	for _, val := range x {

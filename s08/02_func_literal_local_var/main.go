@@ -7,10 +7,12 @@ import "fmt"
 
 func main() {
 
-	factor := 2
+	// factor := 2
 
 	mult := func(i, j int) int {
-		return i * j * factor
+		return i * j
 	}
-	fmt.Println(mult(3, 4))
+
+	fmt.Println(mult(5, 10))
+
 }

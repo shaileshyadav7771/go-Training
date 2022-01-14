@@ -8,8 +8,11 @@ import "fmt"
 var i = 10
 
 func main() {
+	fmt.Printf("Type of i is %T\n ", i)
+	f4()
 	f1()
 }
+
 func f1() {
 	j := 20
 	k := 30
@@ -22,7 +25,7 @@ func f2(jp int) {
 
 	// fmt.Println("f2() -", j) //compiler error
 	// fmt.Println("f2() -", k) //compiler error
-
+	i = 20
 	fmt.Println("f2(#1) -", i, jp)
 	i := 30
 
@@ -34,4 +37,8 @@ func f3(ip, jpp int) {
 	ip++
 	jpp++
 	fmt.Println("f3(#1) -", i, ip, jpp)
+}
+
+func f4() {
+	fmt.Println("i value is from f4(): ", i)
 }

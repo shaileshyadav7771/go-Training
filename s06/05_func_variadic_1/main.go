@@ -10,6 +10,7 @@ func main() {
 	sum(3, 4, 5)
 
 	nums := []int{1, 2, 3, 4, 5}
+	fmt.Println(nums)
 	sum(nums...)
 
 	sum2(nums)

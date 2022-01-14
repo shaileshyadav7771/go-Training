@@ -11,10 +11,12 @@ func main() {
 	fmt.Println(nextPos1())
 	fmt.Println(nextPos1())
 	fmt.Println(nextPos1())
+	//here we will get o/p 1,2,3 similar to static variable which we create under class level.
 
 	fmt.Println()
 	nextPos2 := getPositiveInt()
 	fmt.Println(nextPos2())
+	//here It'll start from 1 because we have used nextPos2 another
 
 	fmt.Printf("'%T' '%T' \n", nextPos1, nextPos1())
 	fmt.Printf("%x %x \n", &nextPos1, &nextPos2)

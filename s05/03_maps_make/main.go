@@ -21,7 +21,9 @@ func main() {
 	fmt.Println(days)
 
 	days["Sun"] = 3
-	days["Sun"] -= 2
+	fmt.Println(days)
+
+	days["Sun"] -= 3
 	fmt.Println(days)
 
 	days["Mon"] = 1
@@ -29,5 +31,5 @@ func main() {
 	fmt.Println(days)
 
 	fmt.Println(days["Mon"])
-	fmt.Println(days["NoDay"])
+	fmt.Println(days["No"])
 }
