@@ -25,6 +25,7 @@ func main() {
 
 	// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 	var num interface{} = 10
+	fmt.Println(num)
 	println(num.(int) + 20)
 	fmt.Printf("%d %T \n", num, num)
 }
