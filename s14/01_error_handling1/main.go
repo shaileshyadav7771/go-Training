@@ -31,6 +31,7 @@ func testCase1() {
 	_, err := os.Open(fileName)
 	if err != nil {
 		log.Println("Error: ", err)
+		//benifit of log over fmt is that It'll add timestamp e.g 2022/01/21 20:18:14
 	}
 }
 
