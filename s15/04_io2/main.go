@@ -22,6 +22,7 @@ func main() {
 
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 func readFile() {
+	fmt.Println("First Argument is: ", os.Args[1])
 	f, err := os.Open(os.Args[1])
 
 	for i, v := range os.Args {

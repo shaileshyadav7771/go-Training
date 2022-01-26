@@ -13,10 +13,12 @@ type artist struct {
 }
 
 func (a *artist) showName() {
-	fmt.Println("Name=", a.name)
+	fmt.Println("Name from Artist showName():=", a.name)
+	println()
 }
 func (a *artist) showAge() {
-	fmt.Println("Age=", a.age)
+	fmt.Println("Age from Artist showAge():=", a.age)
+
 }
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
@@ -26,10 +28,10 @@ type singer struct {
 }
 
 func (a *singer) showAge() {
-	fmt.Println("Fake Age=", a.age+100)
+	fmt.Println("Fake Age from singer showAge():=", a.age+100)
 }
 func (a *singer) showfield() {
-	fmt.Println("Field=", a.field)
+	fmt.Println("Field from singer showfield():=", a.field)
 }
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~

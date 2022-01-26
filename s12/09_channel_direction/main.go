@@ -25,6 +25,7 @@ import (
 // 		=> 196 + (3) = 199
 // 		=> 199 + (-2) = 197
 //
+
 var currentBalance = 200
 
 func main() {
@@ -57,6 +58,7 @@ func debit(c chan<- int) { //a "send-only" channel
 func balance(c <-chan int) { //a "receive-only" channel
 	for {
 		num, ok := <-c
+		// fmt.Println("Testing: ", num, ok)
 		if ok == false {
 			fmt.Println("Error:")
 			break

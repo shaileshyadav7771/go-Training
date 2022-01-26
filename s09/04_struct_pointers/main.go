@@ -35,11 +35,11 @@ func main() {
 	fmt.Println(emp)
 
 	// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-	p := &emp
+	p := &emp //note It is pointing to variable not the struct variable
 
 	p.name = "Jack"
 	emp.job = "Go Expert"
 	fmt.Println(*p)
 
-	fmt.Printf("%x %x", &emp.name, &p.name)
+	fmt.Printf("%x %x", &emp.name, &p.name) //both are pointing to the same address.
 }

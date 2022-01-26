@@ -19,6 +19,18 @@ type imdb struct {
 	comment string
 }
 
+//In go we can not use same fn name (overloading is not allowed).
+// func display() {
+// 	fmt.Println("Hello")
+// }
+// func display(msg string) {
+// 	fmt.Println(msg)
+// }
+
+//in below function we can see funct fullInfo() with same name
+//but both are having different receiver and in Go programming Receiver is also a part of signature that is why
+//we are not getting any ERROR.
+
 func (m movie) fullInfo() string {
 	return m.name + "-" + m.actor
 }
@@ -28,10 +40,15 @@ func (i imdb) fullInfo() string {
 		i.movie.actor + "-" + i.name + "-" + i.comment)
 }
 
+//Note above type is called overriding becz both are associted with different strct (Like how we see in OOP'S)
+//but in some books they are calling it as method overloading and at some place overriding. :)
+
 func main() {
-	m := movie{"Forrest Gump", "Tom Hanks"}
+	m := movie{"Bahubali", "Shailesh"}
+
 	i1 := imdb{m, "Sony Pictures", "Loved it!"}
 
+	//another way to declare is:
 	i2 := imdb{
 		movie: movie{
 			name:  "The Godfather",

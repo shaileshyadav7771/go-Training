@@ -12,7 +12,9 @@ import "fmt"
 type info struct{ fName, lName string }
 
 type person struct {
-	info
+	info //anoynmus struct
+	//like earlier we discussed we can't use same type of type(e.g string and can't declare string again)
+	//same way if we are using anoynmus struct we can not use same name multile time.(here it is info)
 	age, height int
 }
 
@@ -20,7 +22,7 @@ type student struct {
 	person
 	id int
 }
-	
+
 func main() {
 
 	var s student
@@ -38,7 +40,7 @@ func main() {
 		id: 1400,
 	}
 
-	fmt.Printf("%v \n\n", s)
+	fmt.Printf(" : %v \n\n", s)
 
 	s.height = 190
 	fmt.Printf("%v \n", s)

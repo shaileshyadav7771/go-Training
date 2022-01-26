@@ -19,10 +19,11 @@ func main() {
 	fmt.Println("\n==> gcd using channels")
 	g := gcd2(2, 4)
 	fmt.Printf("gcd2(2, 4)\t%d \n", <-g)
+	//in first case we have stored the value inside g variable.and now later directly passing it.
 
 	fmt.Printf("gcd2(27, 9)\t%d \n", <-gcd2(27, 9))
 	fmt.Printf("gcd2(27, 4)\t%d \n", <-gcd2(27, 4))
-	fmt.Printf("gcd2(111, 259)\t%d \n", <-gcd2(111, 259))
+	fmt.Printf("gcd2(111, 259)\t%d \n", <-gcd2(1110000000, 2590000000))
 }
 
 // gcd of two integers using recursive

@@ -12,7 +12,7 @@ func main() {
 
 	// ref: https://golang.org/pkg/strconv/
 
-	iResult, _ := strconv.Atoi("24")
+	iResult, _ := strconv.Atoi("77")
 	fmt.Printf("%d %T \n", iResult, iResult)
 
 	sResult := strconv.Itoa(12)

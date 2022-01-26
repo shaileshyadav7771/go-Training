@@ -14,8 +14,9 @@ import "fmt"
 // Ref: https://blog.golang.org/pipelines
 //
 func main() {
-	nums := []int{2, 3, 4}
+	nums := []int{2, 3, 4, 50000000999999}
 	c := gen(nums...)
+	fmt.Println("Printing c value is: ", c)
 	out := sq(c)
 
 	for range nums {
@@ -28,24 +29,27 @@ func main() {
 	}
 }
 
+//receive only channel
 func gen(nums ...int) <-chan int {
-	out := make(chan int)
+	channel1 := make(chan int) //bidirectional channel but return'll be receive only :)
 	go func() {
 		for _, n := range nums {
-			out <- n
+			channel1 <- n
 		}
-		close(out)
+		close(channel1)
 	}()
-	return out
+
+	return channel1
 }
 
-func sq(in <-chan int) <-chan int {
-	out := make(chan int)
+//Stage-2 pipeline
+func sq(input <-chan int) <-chan int {
+	channel2 := make(chan int) //bidirectional
 	go func() {
-		for n := range in {
-			out <- n * n
+		for n := range input {
+			channel2 <- n * n
 		}
-		close(out)
+		close(channel2)
 	}()
-	return out
+	return channel2
 }

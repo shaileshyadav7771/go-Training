@@ -15,9 +15,10 @@ func (m movie) fullInfo() string {
 }
 
 func main() {
-	m1 := movie{"Forrest Gump", "Tom Hanks"}
+	m1 := movie{"Mahabharat", "Arjun"}
 	m2 := movie{"The Godfather", "Marlon Brando"}
 
 	fmt.Println(m1.fullInfo())
 	fmt.Println(m2.fullInfo())
+	fmt.Println(m2.actor) //accessing a single value
 }

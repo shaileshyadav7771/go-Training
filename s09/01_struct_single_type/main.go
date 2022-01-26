@@ -7,9 +7,11 @@ import "fmt"
 
 func main() {
 	type myType float64
+
 	var total myType
 
 	total = 44
+
 	fmt.Printf("%.2f %T \n", total, total)
 
 	var total2 float64
@@ -18,7 +20,8 @@ func main() {
 	total2 = float64(total)
 	fmt.Printf("%.2f %T \n", total2, total2)
 
-	// if total == total2 { //compiler error - mismatched types
-	// 	fmt.Println("xx")
-	// }
+	//here I am converting total data type to float64 type.
+	if float64(total) == total2 { //compiler error - mismatched types
+		fmt.Println("xx")
+	}
 }

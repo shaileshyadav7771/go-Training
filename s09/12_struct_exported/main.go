@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"strings"
 
-	"./types"
+	athletes "./types"
 )
 
 func changeAthleteName1(p athletes.Player) {
@@ -33,4 +33,5 @@ func main() {
 	fmt.Println("(3) player1:", player1)
 
 	fmt.Println("(4) player1:", *player1.ToLowercase())
+	//applying method reciever as we know we can apply it on any field of type Player.
 }

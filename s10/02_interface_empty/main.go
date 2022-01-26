@@ -37,12 +37,12 @@ type athlete struct {
 	country string
 }
 
-type football struct { //meaning footbalPlayer!
+type criket struct { //meaning footbalPlayer!
 	athlete
 	position string
 }
 
-type tennis struct {
+type kabaddi struct {
 	athlete
 	rightHanded bool
 }
@@ -63,29 +63,33 @@ type numType struct {
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
 func main() {
-	messi := football{}
-	pele := football{}
-	federer := tennis{}
-	nadal := tennis{}
+	messi := criket{}
+	pele := criket{}
+	federer := kabaddi{}
+	nadal := kabaddi{}
+
+	fmt.Println("Testing", messi, pele, federer)
 
 	favAthletes := []athletes{messi, pele, federer, nadal}
+	fmt.Printf("Value is %x and Type: %T", favAthletes, favAthletes)
 
 	for k, v := range favAthletes {
 		fmt.Println(k, " - ", v)
 	}
 
-	messi = football{athlete{"Leo Messi", "Argentina"}, "Attcker"}
-	federer = tennis{athlete{"Roger Federer", "Switzerland"}, true}
+	messi = criket{athlete{"Sachin", "INDIA"}, "Attcker/Right hand side"}
+	federer = kabaddi{athlete{"Shailesh_Yadav", "Jaunpur"}, true}
 	playerInfo(messi)
 	playerInfo(federer)
+	fmt.Println("******************************************")
 
 	// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-	pele = football{athlete{"Pele", "Brazil"}, "Attcker"}
-	nadal = tennis{athlete{"Rafael Nadal", "Spain"}, false}
+	pele = criket{athlete{"Pele", "Brazil"}, "Attcker"}
+	nadal = kabaddi{athlete{"Rafael Nadal", "Spain"}, false}
 
 	favAthletes2 := []interface{}{messi, pele, federer, nadal}
 
-	fmt.Println(favAthletes2)
+	fmt.Println("Testing 1.5: ", favAthletes2)
 
 	// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 	// Added on 15-Oct-2018
@@ -101,4 +105,9 @@ func main() {
 	nt.val = messi
 	fmt.Printf("%#v %T \n", nt.val, nt.val)
 	// main.football{athlete:main.athlete{name:"Leo Messi", country:"Argentina"}, position:"Attcker"} main.football
+
+	// var a interface{}
+	// a = 10
+	// fmt.Println(a)
+
 }

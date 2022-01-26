@@ -7,6 +7,8 @@ import "fmt"
 
 func main() {
 
+	// This struct is without any name(anonymous)and at the same time we are assigning the value to it.
+
 	player1 := struct {
 		name, sport string
 		age         int
@@ -14,13 +16,14 @@ func main() {
 
 	fmt.Println("Player 1=", player1)
 
+	fmt.Println("- - - -- - - - - -- - - - - - - -- - - - - - - -")
 	player2 := struct {
 		name, sport string
 		age         int
 	}{
 		age:   21,
 		sport: "Swimming",
-		name:  "Katie Ledecky",
+		name:  "Shailesh Yadav",
 	}
 	fmt.Println("Player 2=", player2)
 }

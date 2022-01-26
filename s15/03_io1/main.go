@@ -18,17 +18,21 @@ var newFileName = "new.txt"
 func main() {
 
 	// uncomment one at a time.
-	writeToFile()
+	// writeToFile()
 	// readFromFile()
 	// renameFile()
-	// removeFile()
+	removeFile()
 }
 
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 func writeToFile() {
 	players := team{"Messi", "Pele", "Maradona", "Zidane", "Platini"}
+	fmt.Printf("players:%T\n", players)
 
 	err := ioutil.WriteFile(fileName, []byte(players.toString()), 0666)
+
+	// fmt.Println("players.toString()", players.toString())
+	// fmt.Println("players.toString()", []byte(players.toString()))
 
 	if err != nil {
 		fmt.Println("Error:", err)
@@ -44,6 +48,7 @@ func (t team) toString() string {
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 func readFromFile() {
 	bs, err := ioutil.ReadFile(fileName)
+	fmt.Println()
 	if err != nil {
 		fmt.Println("Error:", err)
 	}
@@ -64,7 +69,7 @@ func renameFile() {
 
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 func removeFile() {
-	err := os.Remove(fileName)
+	err := os.Remove("new.txt")
 	if err != nil {
 		fmt.Println("Error:", err)
 	} else {

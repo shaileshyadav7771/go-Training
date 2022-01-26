@@ -31,15 +31,19 @@ func (c *square) perim() int {
 	return 4 * c.s
 }
 
-// = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// = = = = = = = = = = = = = below 2 abstract method's= = = = = = = = = = = = = = = = =
 type shape interface {
 	area() int
 	perim() int
 }
 
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+//below function is taking shape(interface as a input) so any struct related with above interface can access
+//below function.
 func info(s shape) {
 	fmt.Printf("area()=%d perim()=%d\n", s.area(), s.perim())
+	//here s.area() and s.perim() is not having implementaion in interface so it's depends on the object it is calling
+
 }
 
 func totalArea(shapes ...shape) int {
@@ -83,6 +87,7 @@ func main() {
 	shapes[1] = &r2
 	shapes[2] = &s1
 	shapes[3] = &s2
+	fmt.Println("array value:", shapes)
 
 	totalArea := 0
 	for _, s := range shapes {

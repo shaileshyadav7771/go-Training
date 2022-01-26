@@ -10,21 +10,25 @@ import (
 
 func main() {
 	c := make(chan string, 3)
-	fmt.Printf("capacity:%d length:%d \n", cap(c), len(c))
+	fmt.Printf("At Start: capacity:%d length:%d \n", cap(c), len(c))
 
 	c <- "Message 1"
 	c <- "Message 2"
 
-	fmt.Printf("capacity:%d length:%d \n", cap(c), len(c))
+	fmt.Printf("After sending message1,2 capacity:%d length:%d \n", cap(c), len(c))
 
 	c <- "Message 3"
-	fmt.Printf("capacity:%d length:%d \n", cap(c), len(c))
+	fmt.Printf("After sending message3 capacity:%d length:%d \n", cap(c), len(c))
 
 	time.Sleep(5 * time.Second)
-	fmt.Println(<-c)
-	time.Sleep(2 * time.Second)
-	fmt.Println(<-c)
+	fmt.Println("Reading one value from channel", <-c)
 
+	time.Sleep(2 * time.Second)
+	fmt.Println("Reading 2nd value from channel", <-c)
+
+	fmt.Println("Reading last(3rd) value from channel", <-c)
+
+	//Note : Now after this channel length is zero so we can not read further.
 	// fmt.Println(<-c) //ok
 	// fmt.Println(<-c) //fatal error: all goroutines are asleep - deadlock!
 

@@ -15,17 +15,18 @@ func main() {
 
 func testCase1() {
 	fmt.Println(strings.Compare("at", "at"))
-	fmt.Println(strings.Compare("at", "amber"))
+	fmt.Println(strings.Compare("ab", "aaber"))
 	fmt.Println(strings.Compare("amber", "at"))
 
 	fmt.Println(bytes.Compare([]byte("amber"), []byte("at")))
+	fmt.Println([]byte("shailesh"))
 
 	fmt.Println(strings.Contains("team player", "play"))
 	fmt.Println(bytes.Contains([]byte("team player"), []byte("play")))
 
 	fmt.Println(strings.Count("interesting", "e"))
 	fmt.Println(strings.Count("redredred", "re"))
-	fmt.Println(strings.Count("aaaaaaaa", "aa"))
+	fmt.Println(strings.Count("shailesh", "s"))
 }
 func testCase2() {
 	fmt.Printf("Fields are: %q \n", strings.Fields("  foo bar  baz   "))
@@ -37,7 +38,7 @@ func testCase2() {
 	fmt.Println(strings.HasSuffix("friend", "end"))
 
 	fmt.Println(strings.Index("booklet", "let"))
-	fmt.Println(strings.Index("booklet", "lets"))
+	fmt.Println(strings.Index("booklet", "lets")) //if lets not found then It'll return -1
 }
 func testCase3() {
 	s := []string{"Mon", "Tue", "Wed"}

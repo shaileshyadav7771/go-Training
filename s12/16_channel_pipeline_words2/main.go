@@ -10,16 +10,18 @@ import (
 	tjarratt "github.com/tjarratt/babble"
 )
 
-// ASSIGNMENT: Rewrite the previous assignment (pipeline-like) 
+// ASSIGNMENT: Rewrite the previous assignment (pipeline-like)
 // using functions and unidirectional Channels.
 func main() {
 
-	newWords := make(chan string)
-	uWords := make(chan string) //uppercase words
+	new_word_channel := make(chan string)
+	uppercase_channel := make(chan string) //uppercase words
 
-	go sendWords(newWords)
-	go convertWords(uWords, newWords)
-	printWords(uWords)
+	go sendWords(new_word_channel)
+	go convertWords(uppercase_channel, new_word_channel)
+	//printing upper channel Data:
+
+	printWords(uppercase_channel)
 }
 
 func sendWords(out chan<- string) {

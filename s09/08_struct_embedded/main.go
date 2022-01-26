@@ -12,21 +12,22 @@ type generalInfo struct {
 type player struct {
 	name, sport string
 	age         int
-	info        generalInfo
+	info        generalInfo // struct embedded
 }
 
 func main() {
 
 	var player1 player
-	player1.name = "Wayne Gretzky"
-	player1.age = 57
-	player1.sport = "Hockey"
-	player1.info.country = "Canada"
-	player1.info.hairColor = "Brown"
+	player1.name = "Sachin"
+	player1.age = 60
+	player1.sport = "Cricket"
+	player1.info.country = "India"
+	player1.info.hairColor = "Black"
 
 	fmt.Println("Player 1:", player1)
 
 	// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+	fmt.Println()
 	info2 := generalInfo{
 		country:   "USA",
 		hairColor: "black",

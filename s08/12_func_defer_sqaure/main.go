@@ -3,9 +3,7 @@
 
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 // ASSIGNMENT - Use the 'defer' statement to write a square function that hijacks the
 // correct return type when the input parameter is 2 or 4.
@@ -13,21 +11,24 @@ import (
 // For other values return (x*x)
 
 func main() {
-	fmt.Println(square2(2))
-	fmt.Println(square2(4))
+	fmt.Println(square(2))
+	fmt.Println(square(4))
+	fmt.Println(square(10))
 
-	fmt.Println(square2(3))
 }
 
-func square2(x int) (result int) {
+func square(x int) (result int) {
+
 	result = x * x
 
 	defer func() {
 		if x == 2 || x == 4 {
 			result += x
 		}
+
 	}()
 
-	fmt.Print("* ")
+	fmt.Println("Just test purpose here This line will excecute before defer statement.")
 	return
+
 }

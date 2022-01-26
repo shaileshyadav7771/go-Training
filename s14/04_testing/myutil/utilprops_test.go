@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-type rectTestData struct {
+type checkingTestData struct {
 	l     uint
 	w     uint
 	area  uint
@@ -15,7 +15,7 @@ type rectTestData struct {
 }
 
 // change any value in the following test set to experience a fail example.
-var rectTestsValues = []rectTestData{
+var rectTestsValues = []checkingTestData{
 	{2, 3, 6, 10}, {5, 10, 50, 30}, {4, 2, 8, 12}}
 
 func TestRect(t *testing.T) {

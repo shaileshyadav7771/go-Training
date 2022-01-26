@@ -14,17 +14,19 @@ func main() {
 	for i := 1; i <= 3; i++ {
 		go printMsg(c, i)
 	}
-	time.Sleep(10 * time.Second)
+	// time.Sleep(10000 * time.Second)
+	var input string
+	fmt.Scanln(&input) // press "Enter" to exit
 }
 
 func printMsg(c chan int, id int) {
-	fmt.Printf("ooo %d is waiting for a channel space...\n", id)
+	fmt.Printf("Hey %d is waiting for a channel space...\n", id)
 
 	c <- id
-	fmt.Printf("=== %d has a channel space\n", id)
+	fmt.Printf("+++ %d has acquired channel space\n", id)
 
-	time.Sleep(600 * time.Millisecond)
-	fmt.Printf("xxx %d has released the channel space\n", id)
+	time.Sleep(1 * time.Millisecond)
+	fmt.Printf("--- %d has released the channel space\n", id)
 
 	<-c
 }

@@ -12,12 +12,14 @@ type player struct {
 
 func main() {
 
-	p1 := &player{"Michael Phelps", "swimming", 32}
+	p1 := &player{"Michael Phelps", "swimming", 32} //pointer directly pointing to structure
 	fmt.Printf("(*p1).name=%s p1.name=%s\n", (*p1).name, p1.name)
 
+	fmt.Println()
 	(*p1).age = 20
 	fmt.Println("Player 1:", (*p1))
 
+	//other way by creating an variable and then pointing..
 	player2 := player{"Diego Maradona", "Soccer", 57}
 	p2 := &player2
 

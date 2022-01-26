@@ -13,7 +13,7 @@ import (
 type SoccerClubs struct {
 	Name    string
 	Country string
-	Value   float32 `json:"Dollar Value(B)"`
+	Value   float32 `json:"Dollar Value(B)"` //It's alias name which we are telling to compiler and we will see in JSON
 	Players []string
 }
 
@@ -27,25 +27,37 @@ var teams = []SoccerClubs{
 }
 
 func main() {
+	// fmt.Println("teams:", teams)
 	fmt.Println("\n- - - - - - - - - - - - - - - - - - - - - - - - - ")
 
 	// use either json.Marshal() or json.MarshalIndent()
-	data, err := json.Marshal(teams)
-	// data, err := json.MarshalIndent(teams, "", "    ")
+	// data, err := json.Marshal(teams)
+	//Marshaling means converting from go lang data structure form to json Data form.
+	//so data is json form
+	data, err := json.MarshalIndent(teams, "", "   ")
 
 	if err != nil {
 		log.Fatalf("JSON marshaling failed: %s", err)
 	}
 
-	//fmt.Printf("%v\n\n", teams)
-	fmt.Printf("%s\n", data)
+	fmt.Printf("%v\n\n", teams)
+	fmt.Printf("%+v\n\n", teams) //+v means It will show key name also.
+	fmt.Printf("JSON Data is: %s\n", data)
 
 	fmt.Println("\n- - - - - - - - - - - - - - - - - - - - - - - - - ")
-	var names []struct{ Name string }
+	var names []struct {
+		Name    string
+		Country string
+	}
 
+	//Now we are converting from JSON Data type to Go structure.
 	if err := json.Unmarshal(data, &names); err != nil {
 		log.Fatalf("JSON unmarshaling failed: %s", err)
 	}
 
 	fmt.Println(names)
+
+	var a string = "s"
+	fmt.Println(a)
+
 }

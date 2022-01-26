@@ -11,10 +11,12 @@ import (
 
 func main() {
 	// First run without 'go' (no concurrency); then with 'go' (concurrency);
+	// numbers()
+	// alphabets()
 	go numbers()
 	go alphabets()
 
-	time.Sleep(3200 * time.Millisecond)
+	// time.Sleep(3200 * time.Millisecond)
 	fmt.Println("\nmain terminated")
 }
 

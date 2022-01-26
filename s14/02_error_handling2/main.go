@@ -10,35 +10,47 @@ import (
 )
 
 func main() {
-	// Also try produceError2() and 'false'
+
 	_, _, err := produceError1(true)
 	if err != nil {
-		log.Fatalln(err)
+		fmt.Println("test1")
+		// log.Fatalln("err ki value is: ", err)
 	} else {
 		log.Println("No error!")
 	}
+
+	_, _, error := produceError2(true)
+	if error != nil {
+		fmt.Println("test2")
+		// log.Fatalln("error ki value is: ", error)
+	} else {
+		fmt.Println("******************************")
+		log.Println("Sorry No ERROR found :) ")
+
+	}
+
 }
 
 func produceError1(b bool) (int, int, error) {
+
 	if !b {
 		return 0, 0, nil
 	}
-
-	errMsg1 := errors.New("I'm just a value like any other values in Go! (Rob Pike told me)")
-	fmt.Printf("**errors.New() generates type: %T\n", errMsg1)
+	fmt.Println()
+	errMsg1 := errors.New("ProduceError1- b value is false so excecuting this line.. ")
+	fmt.Printf("-errors.New() generates type: %T\n", errMsg1)
 
 	return 0, 0, errMsg1
 }
 
-// = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 func produceError2(b bool) (int, int, error) {
 
 	if !b {
 		return 0, 0, nil
 	}
+	fmt.Println()
+	error := fmt.Errorf("it's %v that I'm just an error value", b)
+	fmt.Printf("**errors.New() generates type: %T\n", error)
 
-	errMsg2 := fmt.Errorf("it's %v that I'm just an error value", b)
-	fmt.Printf("**errors.New() generates type: %T\n", errMsg2)
-
-	return 0, 0, errMsg2
+	return 0, 0, error
 }

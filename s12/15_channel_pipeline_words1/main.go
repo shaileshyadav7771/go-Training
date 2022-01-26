@@ -5,7 +5,9 @@ package main
 
 import (
 	"fmt"
+	"runtime"
 	"strings"
+	"time"
 
 	tjarratt "github.com/tjarratt/babble"
 )
@@ -17,27 +19,33 @@ import (
 // Use anonymous functions to write your goroutines.
 //
 func main() {
+	start := time.Now()
+	runtime.GOMAXPROCS(2) //testing
 
 	babbler := tjarratt.NewBabbler() // requires "github.com/tjarratt/babble"
-	newWords := make(chan string)
-	uWords := make(chan string)
+	new_word_generator_channel := make(chan string, 1000)
+	Upperword_channel := make(chan string, 1000)
 
 	go func() { // 'newWords' goroutine
-		for i := 0; i < 5; i++ {
-			newWords <- babbler.Babble() //produces random words
+		for i := 0; i < 50000; i++ {
+			new_word_generator_channel <- babbler.Babble() //produces random words
 		}
 
-		close(newWords)
+		close(new_word_generator_channel)
 	}()
 
 	go func() { // 'uWords' goroutine
-		for w := range newWords {
-			uWords <- w + " --> " + strings.ToUpper(w)
+		for w := range new_word_generator_channel {
+			Upperword_channel <- w + " --> " + strings.ToUpper(w)
 		}
-		close(uWords)
+		close(Upperword_channel)
 	}()
 
-	for w := range uWords {
+	for w := range Upperword_channel {
 		fmt.Println(w)
+
 	}
+	fmt.Printf("capacity:%d length:%d \n", cap(Upperword_channel), len(Upperword_channel))
+	elapsed := time.Since(start)
+	fmt.Printf("\nprogram took %s. \n", elapsed)
 }

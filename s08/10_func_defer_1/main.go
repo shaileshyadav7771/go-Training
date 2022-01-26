@@ -11,11 +11,11 @@ import (
 func main() {
 	fmt.Println("LOC 1", time.Now())
 
-	// showMsg()
+	// showMsg() means It'll excecute at last after all statement excecuted.
 	defer showMsg()
 
 	fmt.Println("LOC 2", time.Now())
-	time.Sleep( 5 * time.Second)
+	time.Sleep(5 * time.Second)
 	fmt.Println("LOC 3", time.Now())
 }
 
